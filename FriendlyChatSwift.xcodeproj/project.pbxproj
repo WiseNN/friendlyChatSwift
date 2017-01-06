@@ -247,7 +247,7 @@
 				TargetAttributes = {
 					F31AA7621D35B74300616067 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 36QCL6825E;
+						DevelopmentTeam = 6AK84RJP73;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -464,6 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6AK84RJP73;
 				INFOPLIST_FILE = FriendlyChatSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FriendlyChatSwift2.ios;
@@ -478,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6AK84RJP73;
 				INFOPLIST_FILE = FriendlyChatSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FriendlyChatSwift2.ios;
