@@ -11,15 +11,15 @@ import Foundation
 class Utilities
 {
  
-    func removeWhiteSpace(nsName : NSString)->String
+    func removeWhiteSpace(_ nsName : NSString)->String
     {
         var localNSname = ""
         var accessd = false
         for i in 0...nsName.length-1
         {
-            guard nsName.characterAtIndex(i)  == 32 else{continue}
+            guard nsName.character(at: i)  == 32 else{continue}
             accessd = true
-            localNSname = nsName.substringToIndex(i)
+            localNSname = nsName.substring(to: i)
         }
         
         if(!accessd)
@@ -30,18 +30,18 @@ class Utilities
         return localNSname
     }
     
-    func removeLeadingTrailingWhiteSpace(nsName : NSString) -> String
+    func removeLeadingTrailingWhiteSpace(_ nsName : NSString) -> String
     {
         var localNSname = nsName
         
-        while localNSname.characterAtIndex(0) == 32
+        while localNSname.character(at: 0) == 32
         {
-            localNSname = localNSname.substringFromIndex(1)
+            localNSname = localNSname.substring(from: 1) as NSString
         }
         
-        while localNSname.characterAtIndex(localNSname.length-1) == 32
+        while localNSname.character(at: localNSname.length-1) == 32
         {
-            localNSname =  localNSname.substringToIndex(localNSname.length-1)
+            localNSname =  localNSname.substring(to: localNSname.length-1) as NSString
         }
 
         return String(localNSname)

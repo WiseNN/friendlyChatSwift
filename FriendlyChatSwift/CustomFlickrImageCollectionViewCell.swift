@@ -19,7 +19,7 @@ class CustomFlickrImageCollectionViewCell : UICollectionViewCell
     override func layoutSubviews()
     {
         print("subViews...")
-        flickImgView.userInteractionEnabled = true
+        flickImgView.isUserInteractionEnabled = true
         let DoubleTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(CustomFlickrImageCollectionViewCell.transport))
         DoubleTapGesture.numberOfTapsRequired = 2
             flickImgView.addGestureRecognizer(DoubleTapGesture)

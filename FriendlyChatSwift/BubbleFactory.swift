@@ -34,7 +34,7 @@ class BubbleFactory : UITableViewCell
         self.contentView.addSubview(addView)
     }
     
-    func generateBubble(message : String?, sender : String?) -> UIImageView?
+    func generateBubble(_ message : String?, sender : String?) -> UIImageView?
     {
         
         var view = UIImageView.init()
@@ -83,7 +83,7 @@ class BubbleFactory : UITableViewCell
         let bubblePosX = self.frame.width - message.frame.width
         
         let insets = UIEdgeInsets(top: 15, left: 20, bottom: 25, right: 25)
-        let bubbleImg = UIImage(named: "greenBubble")?.resizableImageWithCapInsets(insets)
+        let bubbleImg = UIImage(named: "greenBubble")?.resizableImage(withCapInsets: insets)
      
         let padding : CGFloat = 14.0
         let bubbleImgFrame = UIImageView(frame: CGRect(x: 0, y: 0, width: message.frame.width+CGFloat(msgPosX)+padding+8, height: message.frame.height+padding))
@@ -114,7 +114,7 @@ class BubbleFactory : UITableViewCell
         let bubblePosX = self.frame.width - message.frame.width
         
         let insets = UIEdgeInsets(top: 15, left: 20, bottom: 25, right: 20)
-        let bubbleImg = UIImage(named: "greyBubble")?.resizableImageWithCapInsets(insets)
+        let bubbleImg = UIImage(named: "greyBubble")?.resizableImage(withCapInsets: insets)
         
         let padding : CGFloat = 14.0
         let bubbleImgFrame = UIImageView(frame: CGRect(x: 0, y: 0, width: message.frame.width+CGFloat(msgPosX)+padding+8, height: message.frame.height+padding))

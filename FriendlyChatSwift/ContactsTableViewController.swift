@@ -12,20 +12,15 @@ class ContactsTableViewController : UIViewController, UITableViewDelegate, UITab
 {
     @IBOutlet var contactsTableView: UITableView!
     
-    
-    
-    
-    
-    
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = contactsTableView.dequeueReusableCellWithIdentifier("Cell")!
+        let cell = contactsTableView.dequeueReusableCell(withIdentifier: "Cell")!
         
         
         return cell

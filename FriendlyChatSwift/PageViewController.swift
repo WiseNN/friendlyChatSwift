@@ -22,20 +22,20 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource
         self.dataSource = self
         
         
-        self.setViewControllers([getViewControllerAtIndex(0)], direction: .Forward, animated: false, completion: nil)
+        self.setViewControllers([getViewControllerAtIndex(0)], direction: .forward, animated: false, completion: nil)
     }
 
     //Custom method to get data source index and change view controllers
-    func getViewControllerAtIndex(index : Int) -> UIViewController
+    func getViewControllerAtIndex(_ index : Int) -> UIViewController
     {
         var currentVC : UIViewController? = nil
         
         switch (index)
         {
         case 0 :
-            currentVC = self.storyboard?.instantiateViewControllerWithIdentifier("SearchRecipeintViewController") as! SearchRecipeintViewController
+            currentVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchRecipeintViewController") as! SearchRecipeintViewController
         case 1 :
-            currentVC = self.storyboard?.instantiateViewControllerWithIdentifier("ContactsTableViewController") as! ContactsTableViewController
+            currentVC = self.storyboard?.instantiateViewController(withIdentifier: "ContactsTableViewController") as! ContactsTableViewController
         default :
             print("Error on selecting view controller...")
         }
@@ -45,23 +45,23 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource
     }
     
     // DataSource Methods
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
         
         guard self.afterPageIndex != NSNotFound else{return nil}
         
         guard self.afterPageIndex != 1 else{return nil}
-        self.afterPageIndex++
+        self.afterPageIndex += 1
         print("after: \(self.afterPageIndex)")
         return getViewControllerAtIndex(self.afterPageIndex)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         
         guard self.beforePageIndex != NSNotFound else{return nil}
         guard self.beforePageIndex > 0 else{return nil}
-        self.beforePageIndex--
+        self.beforePageIndex -= 1
         print("before: \(self.beforePageIndex)")
         return getViewControllerAtIndex(self.beforePageIndex)
     }

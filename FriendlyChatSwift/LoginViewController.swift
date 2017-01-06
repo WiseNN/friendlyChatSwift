@@ -8,6 +8,30 @@
 
 import UIKit
 import Firebase
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate
@@ -28,7 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var loginAlert: UILabel!
     
     //variables
-    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
     
@@ -42,7 +66,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
     }
 
-    @IBAction func signInMethod(sender: AnyObject)
+    @IBAction func signInMethod(_ sender: AnyObject)
     {
         
         guard MyFireAuth.signedIn == false else{
@@ -51,7 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             return
         }
         
-        MyFireAuth.sharedInstance?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!)
+        MyFireAuth.sharedInstance?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
         {
             (userObj, error) in
 
@@ -64,10 +88,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             }
             else
             {
-                let errCode = error!.code
+//                let errCode = error!.
                 let errMsg =  error!.localizedDescription
                 self.loginAlert.adjustsFontSizeToFitWidth = true
-                let err = "Error: \(errMsg) \(errCode)"
+                let err = "Error: \(errMsg) "
                 self.loginAlert.text = err
                 print("ERROR ON SIGN-IN: \(err)")
                 return
@@ -79,7 +103,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                 
                 MyFireAuth.currentUserID = String(usrName)
                 print("current UserID: \(MyFireAuth.currentUserID)")
-                let pageVC = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! PageViewController
+                let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
                 self.navigationController?.setNavigationBarHidden(true, animated: false)
                 self.navigationController?.pushViewController(pageVC, animated: true)
             })
@@ -89,7 +113,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     
     
-    @IBAction func signUpMethod(sender: AnyObject)
+    @IBAction func signUpMethod(_ sender: AnyObject)
     {
         //get initialVC reference to update labels
         
@@ -151,7 +175,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             return
         }
         
-        MyFireAuth.sharedInstance?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!) {
+        MyFireAuth.sharedInstance?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) {
             
             (user, error) in
             self.passwordTextField.text = ""
@@ -179,7 +203,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             
 //            vc.loginAlert.text = "\(MyFireAuth.currentUserID) has been signed up!"
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             
         }
 
@@ -187,9 +211,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
     }
     
-    @IBAction func cancelSignUpMethod(sender: AnyObject)
+    @IBAction func cancelSignUpMethod(_ sender: AnyObject)
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -210,23 +234,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             loginAlert.text = signOutError.localizedDescription
         }
     }
-    @IBAction func callSignOutMethod(sender: AnyObject)
+    @IBAction func callSignOutMethod(_ sender: AnyObject)
     {
         signOutMethod()
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true
     }
     
     //Helper methods, remember to change param back to: FIRUser
-    func  createUserPathSignUpHelper(userSigningUp : FIRUser, displayName : String )
+    func  createUserPathSignUpHelper(_ userSigningUp : FIRUser, displayName : String )
     {
         
-    let newUserPathForPrivateChat : [String : AnyObject ] = ["privateChat/_\(displayName)/" : true,
-                                                            "users/\(userSigningUp.uid)/" : displayName]
+    let newUserPathForPrivateChat : [String : AnyObject ]
+        
+        = ["privateChat/_\(displayName)/" : 1 as AnyObject
+            ,"users/\(userSigningUp.uid)/" : displayName as AnyObject]
 
         FIRDatabase.database().reference().updateChildValues(newUserPathForPrivateChat, withCompletionBlock: { (err, ref) in
             
@@ -241,17 +267,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         })
     }
     
-    func validateUsername(username : String) -> Bool
+    func validateUsername(_ username : String) -> Bool
     {
         let nameRegex = "[.#$\\[\\]]"
-        return NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluateWithObject(username)
+        return NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: username)
     }
 
     
-    func validateEmail(candidate: String) -> Bool
+    func validateEmail(_ candidate: String) -> Bool
     {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: candidate)
     }
     
     

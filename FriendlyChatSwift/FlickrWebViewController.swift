@@ -26,7 +26,7 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
     {
         self.flickrCollectionView.delegate = self
         self.flickrCollectionView.dataSource = self
-        findButton.addTarget(self, action: #selector(FlickrWebViewController.searchFlickrPhoto), forControlEvents: UIControlEvents.TouchUpInside)
+        findButton.addTarget(self, action: #selector(FlickrWebViewController.searchFlickrPhoto), for: UIControlEvents.touchUpInside)
     }
     
     func searchFlickrPhoto()
@@ -38,7 +38,9 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
         }
         
         var flickrPhotos = [NSDictionary]()
-        getPhotos(buildURL()){
+        
+        getPhotos(buildURL())
+        {
             (returnedImages) in
             
              returnedImages
@@ -59,19 +61,20 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
         
     }
     
-    func getPhotos(url : NSURL, ImagesReturnedDictAry : [NSDictionary] -> ())
+    func getPhotos(_ url : URL, ImagesReturnedDictAry : @escaping ([NSDictionary]) -> ())
     {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async(execute: {
             
-            let data = NSData(contentsOfURL: url)
+            let data = try? Data(contentsOf: url)
             print("data: \(data)\n\n\n")
             
-            let JSON =  try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+            let JSON =  try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
             
 //            print("FULL JSON: \(JSON)")
-            let JSONobj = JSON as! NSDictionary
+            let JSONobj = JSON as! [String : Any]
             print("JSON OBJ: \(JSONobj)\n\n")
-            let photoObjDictAry = JSONobj["photos"]!["photo"] as! [[String : AnyObject]]
+            let photosObj = JSONobj["photos"] as! [String : Any]
+            let photoObjDictAry = photosObj["photo"] as! [[String : AnyObject]]
             print("photoAry: \(photoObjDictAry)\n\n")
             print("JSON OBJ:\(photoObjDictAry[0]["url_o"])")
             
@@ -80,21 +83,21 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
             for i in 0..<count
             {
                 
-                guard (photoObjDictAry[i]["url_o"] != nil) else {print("no image @ photoObjDictAry[\(i)]");count--;
+                guard (photoObjDictAry[i]["url_o"] != nil) else {print("no image @ photoObjDictAry[\(i)]");count -= 1;
                     continue}
                 
                 let origPicLink = photoObjDictAry[i]["url_o"]! as! String
-                let flickrImgLink = NSURL(string: origPicLink)!
+                let flickrImgLink = URL(string: origPicLink)!
                 let flickrTitle = photoObjDictAry[i]["title"] as! String
                 
                 
                 
-                let tempDict: [String: AnyObject] = [
+                let tempDict: [String: Any] = [
                     "imageTitle" : flickrTitle as String,
-                    "imageURL" : flickrImgLink as NSURL
+                    "imageURL" : flickrImgLink as URL
                 ]
                 
-                returnImagesDictAry.append(tempDict)
+                returnImagesDictAry.append(tempDict as NSDictionary)
 
 //                let flickrImgData = NSData.init(contentsOfURL: flickrImgLink!)
 //                print("flickrImgData: \(flickrImgData!)")
@@ -111,7 +114,7 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
     }
     
     
-    func buildURL() -> NSURL
+    func buildURL() -> URL
     {
         
         let BASE_URL =  "https://api.flickr.com/services/rest/?"
@@ -123,11 +126,15 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
         let per_page = "per_page=100"
         let extras = "extras=url_o"
         
+     
+        
+        
         var url = BASE_URL+search_param+"&"+API_KEY+"&"+search_string+"&"+per_page+"&"+output_format+"&"+extras+"&"+jsonCallBack_param
         
-        url = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        url = url.addingPercentEscapes(using: String.Encoding.utf8)!
+
         
-        let SearchURL = NSURL.init(string: url)!
+        let SearchURL = URL.init(string: url)!
 
         print("...Searching with URL: \(SearchURL)")
         
@@ -135,14 +142,14 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
         
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return 2
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomCollectionFlickrCell", forIndexPath: indexPath) as! CustomFlickrImageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionFlickrCell", for: indexPath) as! CustomFlickrImageCollectionViewCell
         cell.flickImgLabel.text = "1"
         cell.flickImgView.image = UIImage.init(named: "blackFlower")
         cell.outsideVC = self
@@ -150,12 +157,12 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
-    func transporter(image : UIImage)
+    func transporter(_ image : UIImage)
     {
         print("transporter...")
 
         chatVC!.setSMSBkGround(image)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

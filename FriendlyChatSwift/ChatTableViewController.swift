@@ -17,7 +17,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var msgTableView: UITableView!
     @IBOutlet weak var postMesgTxtField: UITextField!
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let textFieldDelegate = ChatTextFieldDelegate()
 
     var msgAry = [[String:String]]()
@@ -34,7 +34,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         
         msgTableView.delegate = self
         msgTableView.dataSource = self
-        msgTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        msgTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         
         
@@ -46,7 +46,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
 //        self.msgTableView.backgroundView = UIImageView(image: UIImage(named: "greenBubble"))
 
     }
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         showNav()
         
@@ -56,7 +56,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     {
         let title = "\(MyFireAuth.recipeintID)"
         let navTitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        navTitleLabel.backgroundColor = UIColor.clearColor()
+        navTitleLabel.backgroundColor = UIColor.clear
         navTitleLabel.text = title
         navTitleLabel.adjustsFontSizeToFitWidth = true
         navTitleLabel.sizeToFit()
@@ -64,7 +64,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         self.navigationItem.titleView = navTitleLabel
         
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Search", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ChatTableViewController.leftBarButtonHandler))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Search", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ChatTableViewController.leftBarButtonHandler))
         
         let img = UIImage.init(named: "flickr-3")
         
@@ -72,7 +72,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         imgV.image = img
         
         let rightButton = UIButton.init()
-        rightButton.addTarget(self, action: #selector(ChatTableViewController.seeFlickrWebViewer), forControlEvents: UIControlEvents.TouchUpInside)
+        rightButton.addTarget(self, action: #selector(ChatTableViewController.seeFlickrWebViewer), for: UIControlEvents.touchUpInside)
         rightButton.addSubview(imgV)
         rightButton.sizeToFit()
         
@@ -83,7 +83,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    func setSMSBkGround(SMSBkGroundImg : UIImage)
+    func setSMSBkGround(_ SMSBkGroundImg : UIImage)
     {
         
         self.msgTableView.backgroundView = UIImageView(image: SMSBkGroundImg)
@@ -93,16 +93,16 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     func seeFlickrWebViewer()
     {
         print("Flickr image...")
-        let flickrVC = storyboard?.instantiateViewControllerWithIdentifier("FlickrWebViewController") as! FlickrWebViewController
+        let flickrVC = storyboard?.instantiateViewController(withIdentifier: "FlickrWebViewController") as! FlickrWebViewController
         
         flickrVC.chatVC = self
-        self.presentViewController(flickrVC, animated: true, completion: nil)
+        self.present(flickrVC, animated: true, completion: nil)
     
     }
     
     func leftBarButtonHandler()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func loadMsgsFromMessageDataModel()
@@ -116,7 +116,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
             
 //            self.msgTableView.beginUpdates()
             //create an index path at the last element of msgAry, Section 0
-            let Path  : [NSIndexPath]? = [NSIndexPath(forRow: self.msgAry.count-1, inSection: 0)]
+            let Path  : [IndexPath]? = [IndexPath(row: self.msgAry.count-1, section: 0)]
             guard let indexPath = Path else{return}
             self.autoScroll = true
         self.msgTableView.reloadData()
@@ -144,18 +144,21 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
                 sessionTimedOut()
                 return
         }
-        guard var message = postMesgTxtField.text where postMesgTxtField.text! != "" else{
+        guard var message = postMesgTxtField.text, postMesgTxtField.text! != "" else{
             print("no message in text field")
             return
         }
         postMesgTxtField.text = ""
         message = Utilities().removeLeadingTrailingWhiteSpace(NSString(string: message))
-        let index1 = NSDate().description.startIndex.advancedBy(10)
-        let date = NSDate().description.substringToIndex(index1)
-        let rangeBegin = NSDate().description.startIndex.advancedBy(11)
-        let rangeEnd = NSDate().description.startIndex.advancedBy(18)
-        let range = (rangeBegin...rangeEnd)
-        let time = NSDate().description.substringWithRange(range)
+        
+        let index1 = Date().description.characters.index(Date().description.startIndex, offsetBy: 10)
+        let date = Date().description.substring(to: index1)
+        let rangeBegin = Date().description.index(Date().description.startIndex, offsetBy: 12)
+        let rangeEnd = Date().description.index(Date().description.startIndex, offsetBy: 18)
+        
+        let range = rangeBegin..<rangeEnd
+        
+        let time = Date().description.substring(with: range)
         
         let post : [String : String] = [
             "sender": MyFireAuth.currentUserID,
@@ -202,35 +205,35 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         
         
         loginVC.loginAlert.text = loginAlertMsg
-        self.navigationController?.popToRootViewControllerAnimated(true);
+        self.navigationController?.popToRootViewController(animated: true);
     }
     func signOut()
     {
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         LoginViewController.sharedInstance.signOutMethod()
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
         
     }
     
     
 
    // Table Configuration-------------------------------------------------
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.msgAry.count
     }
     
-    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+    func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         
         
@@ -239,8 +242,8 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         let bubble = BubbleFactory(message: msg, sender:sender , table: tableView)
         let bgColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
         bubble.backgroundColor = bgColor
-        bubble.selectedBackgroundView = .None
-        bubble.userInteractionEnabled = false
+        bubble.selectedBackgroundView = .none
+        bubble.isUserInteractionEnabled = false
         let container = bubble.generateBubble(msg, sender: sender)
         let height = (container?.frame.height)!
         tableView.rowHeight = height
@@ -254,14 +257,14 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         return bubble
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
         self.scrollToBottomOfTable()
         
     }
     
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView)
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
     {
         self.autoScroll = false
     }
@@ -281,7 +284,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
 
         self.autoScroll = true

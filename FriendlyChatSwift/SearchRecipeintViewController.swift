@@ -22,7 +22,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
         greetings()
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         
         hideNav()
@@ -60,12 +60,12 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
        print("sign-out now!")
     }
     
-    @IBAction func chatButtonMethod(sender: AnyObject)
+    @IBAction func chatButtonMethod(_ sender: AnyObject)
     {
         print("button pressed")
         
         //Check if textfield is empty
-        guard let nsName : NSString = searchTextField.text where searchTextField.text != "" else{
+        guard let nsName : NSString = searchTextField.text as NSString?, searchTextField.text != "" else{
             searchTextField.adjustsFontSizeToFitWidth = true
             resultsLabel.text! = "please enter a user name"
             return
@@ -91,7 +91,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
         let name = Utilities().removeWhiteSpace(nsName)
         self.searchForRecipeint(name)
         {
-            (value) in
+            value in
             
             
             
@@ -119,7 +119,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
             self.resultsLabel.text = resultLabelText
             guard isRecipeintValid else{return}
 //            self.createConversationPath(name)
-            let chatVC = self.storyboard?.instantiateViewControllerWithIdentifier("ChatTableViewController") as! ChatTableViewController
+            let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatTableViewController") as! ChatTableViewController
             
             MyFireAuth.recipeintID = name
 
@@ -129,31 +129,31 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
     }
     
     //function to validate the email address, returns true if validated
-    func validateEmail(candidate: String) -> Bool {
+    func validateEmail(_ candidate: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: candidate)
     }
     
     
     
     //search method for recipeint, returns true if username belongs to a user
-    func searchForRecipeint(recipeint: String, completion : (value : Int)->())
+    func searchForRecipeint(_ recipeint: String, completion : @escaping (_ value : Int)->())
     {
             MessageDataModel.sharedInstance.searchForRecipeintHelper(recipeint){ (valueFromHelper) in
                 
                 guard let localvalue = valueFromHelper else {
                     print("No value has been returned. Look in class: MessageDataModel method:searchForRecipeintHelper Lines: 40-53")
                         let errValue = 2
-                    completion(value: errValue)
+                    completion(errValue)
                     return
                 }
-                 completion(value: localvalue  )
+                 completion(localvalue)
             }
     }
     
     
     
-    func createConversationPath(usrName : String)
+    func createConversationPath(_ usrName : String)
     {
         
         MessageDataModel.sharedInstance.getCurrentUserName({
@@ -179,7 +179,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
                     return
                 }
                 
-                ref.observeSingleEventOfType(.Value, withBlock: {
+                ref.observeSingleEvent(of: .value, with: {
                     (snap) in
                     
                     print("NEW REF SNAP: \(snap.value)")
@@ -191,14 +191,14 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
         
     }
     
-    func validateUsername(username : String) -> Bool
+    func validateUsername(_ username : String) -> Bool
     {
         let nameRegex = "[.#$\\[\\]]"
-        return NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluateWithObject(username)
+        return NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: username)
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return true

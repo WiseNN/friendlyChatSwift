@@ -25,7 +25,7 @@ class ChatTextFieldDelegate : NSObject, UITextFieldDelegate
 //        return false
 //    }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         
