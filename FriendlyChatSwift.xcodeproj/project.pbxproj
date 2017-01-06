@@ -248,6 +248,7 @@
 					F31AA7621D35B74300616067 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 36QCL6825E;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -467,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FriendlyChatSwift2.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -480,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FriendlyChatSwift2.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
