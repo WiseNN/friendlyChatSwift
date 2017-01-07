@@ -9,107 +9,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/ChatTableViewController.swift"
-            timestampString = "494315683.632773"
+            filePath = "FriendlyChatSwift/SearchRecipeintViewController.swift"
+            timestampString = "505469254.56697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "ChatTableViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/ChatTableViewController.swift"
-            timestampString = "494315683.632773"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "postMessage()"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "panGestureHandler(gesture:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-            timestampString = "494291279.392705"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "CustomFlickrImageCollectionViewCell"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "494360834.355116"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "FlickrWebViewController"
-            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.FlickrWebViewController.chatVC.getter : Swift.Optional&lt;FriendlyChatSwift.ChatTableViewController&gt;"
+                  symbolName = "FriendlyChatSwift.SearchRecipeintViewController.panGestureHandler (gesture : __ObjC.UIPanGestureRecognizer) -&gt; ()"
                   moduleName = "FriendlyChatSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/FlickrWebViewController.swift"
-                  timestampString = "495345174.418218"
+                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/SearchRecipeintViewController.swift"
+                  timestampString = "505468876.91156"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "38">
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "5547">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.FlickrWebViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; FriendlyChatSwift.FlickrWebViewController"
+                  symbolName = "FriendlyChatSwift.SearchRecipeintViewController.(panGestureHandler (gesture : __ObjC.UIPanGestureRecognizer) -&gt; ()).(closure #4)"
                   moduleName = "FriendlyChatSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/FlickrWebViewController.swift"
-                  timestampString = "495345174.418772"
+                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/SearchRecipeintViewController.swift"
+                  timestampString = "505468876.913987"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "241">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.FlickrWebViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;FriendlyChatSwift.FlickrWebViewController&gt;"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/FlickrWebViewController.swift"
-                  timestampString = "495345174.419037"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "182">
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -120,332 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-            timestampString = "494299208.344103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "CustomFlickrImageCollectionViewCell"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.CustomFlickrImageCollectionViewCell.flickImgView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-                  timestampString = "495345174.42584"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "34">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.CustomFlickrImageCollectionViewCell.flickImgView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-                  timestampString = "495345174.425991"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "47">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.CustomFlickrImageCollectionViewCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;FriendlyChatSwift.CustomFlickrImageCollectionViewCell&gt;"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-                  timestampString = "495345174.426363"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "buildURL()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-            timestampString = "494304948.29267"
+            filePath = "Pods/mainView.swift"
+            timestampString = "505464920.538892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "layoutSubviews()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-            timestampString = "494304948.29267"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "transport()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/CustomFlickrImageCollectionViewCell.swift"
-            timestampString = "494304948.29267"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "transport()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "FlickrWebViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "searchFlickrPhoto()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.FlickrWebViewController.getPhotos (__ObjC.NSURL) -&gt; ()"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/FlickrWebViewController.swift"
-                  timestampString = "495345157.587943"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "29">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.FlickrWebViewController.(getPhotos (__ObjC.NSURL) -&gt; ()).(closure #1)"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/FlickrWebViewController.swift"
-                  timestampString = "495345157.588161"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "getPhotos(_:ImagesReturnedDictAry:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.FlickrWebViewController.getPhotos (Foundation.URL, ImagesReturnedDictAry : (Swift.Array&lt;__ObjC.NSDictionary&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/FlickrWebViewController.swift"
-                  timestampString = "505418595.928638"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.FlickrWebViewController.(getPhotos (Foundation.URL, ImagesReturnedDictAry : (Swift.Array&lt;__ObjC.NSDictionary&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/FlickrWebViewController.swift"
-                  timestampString = "505418595.930886"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "31">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "getPhotos(_:ImagesReturnedDictAry:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "getPhotos(_:ImagesReturnedDictAry:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "495495761.979888"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "searchFlickrPhoto()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "getPhotos(_:ImagesReturnedDictAry:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "searchFlickrPhoto()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
-            timestampString = "499645528.204913"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "searchFlickrPhoto()"
+            landmarkName = "hitTest(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -456,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendlyChatSwift/LoginViewController.swift"
-            timestampString = "505353926.103515"
+            timestampString = "505468876.241224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "signInMethod(_:)"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "signOutMethod(vc:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -471,61 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/SearchRecipeintViewController.swift"
-            timestampString = "505353983.582127"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505480540.692881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "chatButtonMethod(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.SearchRecipeintViewController.chatButtonMethod (Swift.AnyObject) -&gt; ()"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/SearchRecipeintViewController.swift"
-                  timestampString = "505418595.946094"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "233">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.SearchRecipeintViewController.chatButtonMethod (Swift.AnyObject) -&gt; ()"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/SearchRecipeintViewController.swift"
-                  timestampString = "505418595.948173"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "715">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/SearchRecipeintViewController.swift"
-            timestampString = "505354317.990439"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "chatButtonMethod(_:)"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "transporter(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -535,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/SearchRecipeintViewController.swift"
-            timestampString = "505354418.845637"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505480540.692881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "chatButtonMethod(_:)"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "transporter(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -551,61 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/SearchRecipeintViewController.swift"
-            timestampString = "505354448.777092"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505479692.572316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "searchForRecipeint(_:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.SearchRecipeintViewController.searchForRecipeint (Swift.String, completion : (Swift.Int) -&gt; ()) -&gt; ()"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/SearchRecipeintViewController.swift"
-                  timestampString = "505418595.959427"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.SearchRecipeintViewController.(searchForRecipeint (Swift.String, completion : (Swift.Int) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/SearchRecipeintViewController.swift"
-                  timestampString = "505418595.961516"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/MessageDataModel.swift"
-            timestampString = "505354454.819758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "searchForRecipeintHelper(_:completion:)"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -615,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/MessageDataModel.swift"
-            timestampString = "505354554.014625"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505480540.692881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "searchForRecipeintHelper(_:completion:)"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -631,109 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/MessageDataModel.swift"
-            timestampString = "505370912.840621"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505480540.692881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "getCurrentUserName(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.MessageDataModel.(getCurrentUserName ((Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/MessageDataModel.swift"
-                  timestampString = "505418595.972855"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.MessageDataModel.(getCurrentUserName ((Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/MessageDataModel.swift"
-                  timestampString = "505418595.975048"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "1465">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/MessageDataModel.swift"
-            timestampString = "505370912.840621"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getCurrentUserName(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.MessageDataModel.getCurrentUserName ((Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/MessageDataModel.swift"
-                  timestampString = "505418595.979535"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FriendlyChatSwift.MessageDataModel.(getCurrentUserName ((Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "FriendlyChatSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/norriswise/Documents/Swift/FriendlyChatSwift/FriendlyChatSwift/MessageDataModel.swift"
-                  timestampString = "505418595.981563"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/LoginViewController.swift"
-            timestampString = "505357115.596935"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "signInMethod(_:)"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -743,13 +169,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FriendlyChatSwift/SearchRecipeintViewController.swift"
-            timestampString = "505357780.610451"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505480540.692881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "searchForRecipeint(_:completion:)"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505480540.692881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendlyChatSwift/FlickrWebViewController.swift"
+            timestampString = "505479692.572316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

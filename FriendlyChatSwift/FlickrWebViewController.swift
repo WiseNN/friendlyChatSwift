@@ -20,7 +20,7 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
     var chatVC : ChatTableViewController? = nil
 //    let cellImgView = CustomFlickrImageCollectionViewCell().flickImgView
     
-    
+    var aryDic = [[String : Any]]()
     
     override func viewDidLoad()
     {
@@ -41,27 +41,29 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
         
         getPhotos(buildURL())
         {
-            (returnedImages) in
+            returnedImages in
             
-             returnedImages
+            if !self.aryDic.isEmpty
+            {
+                self.aryDic = [[String : Any]]()
+                self.flickrCollectionView.reloadData()
+            }
+            
+            self.aryDic = returnedImages
         
         print("Array Of Dictionaries: \(returnedImages)")
             
-            self.collectionView(self.flickrCollectionView, numberOfItemsInSection: returnedImages.count)
-//            flickrCollectionView.update
+            DispatchQueue.main.async {
+                self.flickrCollectionView.reloadData()
+            }
             
             
-            
-            
-        
         }
-        
-        
-        
-        
     }
     
-    func getPhotos(_ url : URL, ImagesReturnedDictAry : @escaping ([NSDictionary]) -> ())
+    
+    
+    func getPhotos(_ url : URL, ImagesReturnedDictAry : @escaping ([[String : Any]]) -> ())
     {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async(execute: {
             
@@ -78,7 +80,7 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
             print("photoAry: \(photoObjDictAry)\n\n")
             print("JSON OBJ:\(photoObjDictAry[0]["url_o"])")
             
-            var returnImagesDictAry = [NSDictionary]()
+            var returnImagesDictAry = [[String : Any]]()
             var count = 100
             for i in 0..<count
             {
@@ -97,7 +99,7 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
                     "imageURL" : flickrImgLink as URL
                 ]
                 
-                returnImagesDictAry.append(tempDict as NSDictionary)
+                returnImagesDictAry.append(tempDict)
 
 //                let flickrImgData = NSData.init(contentsOfURL: flickrImgLink!)
 //                print("flickrImgData: \(flickrImgData!)")
@@ -144,15 +146,58 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 2
+        return self.aryDic.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
+    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionFlickrCell", for: indexPath) as! CustomFlickrImageCollectionViewCell
-        cell.flickImgLabel.text = "1"
-        cell.flickImgView.image = UIImage.init(named: "blackFlower")
+    
+        let titleLabel = self.aryDic[indexPath.row]["imageTitle"] as! String
+        let imageURL = self.aryDic[indexPath.row]["imageURL"] as! URL
+        
+        
+        
+            cell.flickImgLabel.text = titleLabel
+        cell.flickImgLabel.numberOfLines = 0
+        cell.flickImgLabel.textAlignment = .center
+        cell.flickImgLabel.adjustsFontSizeToFitWidth = true
+        
+        let activityIndicator = self.useActivityIndicator(onView: cell.flickImgView)
+            cell.flickImgView.insertSubview(activityIndicator, at: cell.flickImgView.subviews.count)
+            activityIndicator.startAnimating()
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            var img : UIImage?
+            
+            defer{
+                let imgView = UIImageView.init(image: img)
+                    imgView.contentMode = .scaleAspectFill
+                
+                DispatchQueue.main.sync {
+                    cell.flickImgView.image = img
+                    cell.flickImgView.contentMode = .scaleAspectFill
+//                    cell.flickImgView.sizeToFit()
+                    activityIndicator.stopAnimating()
+                    activityIndicator.removeFromSuperview()
+                }
+                
+            }
+            
+            do {
+                 let imgData = try Data.init(contentsOf: imageURL)
+                    img = UIImage.init(data: imgData)
+                
+            }catch{
+                cell.flickImgView.image = UIImage.init(named: "blackFlower")
+                cell.flickImgLabel.text = "Image Unloadable Error: \(error)"
+            }
+        }
+        
         cell.outsideVC = self
+        
+        
      
         return cell
     }

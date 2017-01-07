@@ -13,38 +13,144 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet weak var signOutButton: UIButton!
+    
+    
+    
+    var appDel : AppDelegate!
+    
+    lazy var welcomeMessage = {
+        {
+         return "Hey \(MyFireAuth.currentUserID)"
+        }
+    }
+    
+    var originalY : CGFloat!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        loadGestures()
-        searchTextField.delegate = self
-        greetings()
+        self.appDel =  UIApplication.shared.delegate as! AppDelegate!
+    
+     
+        self.searchTextField.delegate = self
+        
+        let panGesture = UIPanGestureRecognizer()
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.addTarget(self, action: #selector(SearchRecipeintViewController.panGestureHandler))
+        
+        self.view.addGestureRecognizer(panGesture)
+        
+        self.signOutButton.addTarget(self, action: #selector(SearchRecipeintViewController.signOutButtonHandler), for: .touchUpInside)
+        
+        self.loadGestures()
+        self.greetings()
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
-        
-        hideNav()
+        self.hideNav()
+        self.hideSignOutButton()
     }
     
-    
-    func hideNav()
+    func hideSignOutButton()
     {
-//        self.navigationController?.navigationItem.title = "Search"
-        self.navigationController?.viewControllers[1].navigationItem.title = "Search"
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.signOutButton.transform = CGAffineTransform.init(translationX: 0, y: -self.signOutButton.frame.height)
         
+        self.originalY = self.view.frame.minY
     }
     
     func greetings()
     {
-        MessageDataModel.sharedInstance.getCurrentUserName({
-            (usrName) in
-            self.resultsLabel.text = "Hey \(usrName)"
-        })
+        self.resultsLabel.text = self.welcomeMessage()()
     }
     
+    func signOutButtonHandler()
+    {
+        
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.signOutMethod(vc: self)
+        
+        //scroll view down, delay 3.0 for sign-out flash view
+        UIView.animate(withDuration: 0.3, delay: 0.7, options: [], animations: {
+            
+            self.view.transform = CGAffineTransform.identity
+        }, completion: {
+            
+            done in
+            guard done else{return}
+
+                    self.navigationController?.popViewController(animated: true)
+        })
+       
+        
+        
+
+        
+        
+        
+        
+        
+    }
+    
+    func panGestureHandler(gesture : UIPanGestureRecognizer)
+    {
+        let subViewHeight : CGFloat! = self.signOutButton.frame.height
+        
+        print("translation in child: \(gesture.translation(in: self.view))")
+        
+        print("translation velocity self.view: \(gesture.velocity(in: self.view))")
+        
+        
+        if gesture.state == .began && gesture.translation(in: self.view).y < 0 && gesture.translation(in: self.view).x < 1 && self.signOutButton.bounds.maxY > self.originalY
+        {
+            self.view.tag = 1
+            
+            //scroll up
+            UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+                
+                self.view.transform = CGAffineTransform.identity
+                }, completion: {
+                    done in
+                    //send button to back
+                    self.view.sendSubview(toBack: self.signOutButton)
+            })
+                
+        }
+        else if gesture.state == .changed && gesture.translation(in: self.view).y > 0 && -subViewHeight <= self.view.frame.minY
+        {
+            self.view.tag = 0
+            
+            //scroll view down
+            UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+                
+                self.view.transform = CGAffineTransform.init(translationX: 0, y: subViewHeight)
+            }, completion: {
+                
+                done in
+                /*
+                //add button to view hierarchy
+                self.view.addSubview(self.signOutButton)
+                
+                //enable button
+                self.signOutButton.isUserInteractionEnabled = true
+ 
+                 */
+            })
+        }
+    }
+    
+   
+    
+    func hideNav()
+    {
+//        self.navigationController?.navigationItem.title = "Search"
+        
+        self.navigationController?.viewControllers[1].navigationItem.title = "Search"
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+
     func loadGestures()
     {
        //When the user taps 2 times, the sign out menu when slide in (down) form the top of the screen
@@ -58,6 +164,36 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
     func adjustForSignOut()
     {
        print("sign-out now!")
+    }
+    
+    func animateTextChange(newText : String)
+    {
+        //fade the label out
+        UIView.animate(withDuration: 0.2, animations: {
+            self.resultsLabel.alpha = CGFloat.init(0)
+        }, completion: { done in
+        
+            //fade label back in, change text
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+            
+                self.resultsLabel.alpha = CGFloat.init(1)
+                self.resultsLabel.text = newText
+            }, completion: { done in
+            
+                //fade label back out
+                UIView.animate(withDuration: 0.3, delay: 0.75 , animations: {
+                self.resultsLabel.alpha = CGFloat.init(0)
+                }, completion: { done in
+                
+                    //fade label back in with new text
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
+                        self.resultsLabel.alpha = CGFloat.init(1)
+                        self.resultsLabel.text = self.welcomeMessage()()
+                    })
+                
+                })
+            })
+        })
     }
     
     @IBAction func chatButtonMethod(_ sender: AnyObject)
@@ -99,7 +235,9 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
                 {
                 
                 case 0 :
+
                     resultLabelText = "User Cant recieve messages"
+                    
                     isRecipeintValid = false
                     break
                 case 1 :
@@ -116,11 +254,14 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
                     break
                 }
             
-            self.resultsLabel.text = resultLabelText
+            
+            self.animateTextChange(newText: resultLabelText)
             guard isRecipeintValid else{return}
 //            self.createConversationPath(name)
+            
             let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatTableViewController") as! ChatTableViewController
             
+            chatVC.logoutButton = self.signOutButton
             MyFireAuth.recipeintID = name
 
             self.navigationController?.pushViewController(chatVC, animated: true)
@@ -207,3 +348,5 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
     
     
 }
+
+

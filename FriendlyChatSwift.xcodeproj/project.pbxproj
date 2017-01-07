@@ -18,8 +18,10 @@
 		F329017A1D3A5BA800268516 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32901791D3A5BA800268516 /* PageViewController.swift */; };
 		F329017C1D3A615A00268516 /* SearchRecipeintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329017B1D3A615A00268516 /* SearchRecipeintViewController.swift */; };
 		F329017E1D3AC98300268516 /* MyFireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329017D1D3AC98300268516 /* MyFireAuth.swift */; };
+		F36033BC1E204D33004A1362 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36033BB1E204D33004A1362 /* Extensions.swift */; };
 		F36164581D3DA1B100322122 /* ChatTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36164571D3DA1B100322122 /* ChatTextFieldDelegate.swift */; };
 		F38CDE071D37FDA20014E716 /* MessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CDE061D37FDA20014E716 /* MessageDataModel.swift */; };
+		F3958B9B1E20C7630077773A /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3958B9A1E20C7630077773A /* mainView.swift */; };
 		F39FE24D1D39AF8300E41B83 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FE24C1D39AF8300E41B83 /* ContactsTableViewController.swift */; };
 		F3A0C10E1D75013400BC4C77 /* FlickrWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C10D1D75013400BC4C77 /* FlickrWebViewController.swift */; };
 		F3A0C1111D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C1101D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift */; };
@@ -43,8 +45,10 @@
 		F32901791D3A5BA800268516 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F329017B1D3A615A00268516 /* SearchRecipeintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRecipeintViewController.swift; sourceTree = "<group>"; };
 		F329017D1D3AC98300268516 /* MyFireAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFireAuth.swift; sourceTree = "<group>"; };
+		F36033BB1E204D33004A1362 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F36164571D3DA1B100322122 /* ChatTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextFieldDelegate.swift; sourceTree = "<group>"; };
 		F38CDE061D37FDA20014E716 /* MessageDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDataModel.swift; sourceTree = "<group>"; };
+		F3958B9A1E20C7630077773A /* mainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 		F39FE24C1D39AF8300E41B83 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		F3A0C10D1D75013400BC4C77 /* FlickrWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrWebViewController.swift; sourceTree = "<group>"; };
 		F3A0C1101D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlickrImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				F3F467451D4BBD1C00B271EF /* CustomTableViewCell */,
 				F329017F1D3AC98E00268516 /* Authentication */,
 				F32901771D3A5A9100268516 /* Data Models */,
+				F3958B971E20ACF30077773A /* Custom View */,
+				F36033BA1E204D1A004A1362 /* Extensions */,
 				F31AA76A1D35B74400616067 /* Main.storyboard */,
 				F31AA76D1D35B74400616067 /* Assets.xcassets */,
 				F31AA76F1D35B74400616067 /* LaunchScreen.storyboard */,
@@ -170,6 +176,23 @@
 				F329017D1D3AC98300268516 /* MyFireAuth.swift */,
 			);
 			name = Authentication;
+			sourceTree = "<group>";
+		};
+		F36033BA1E204D1A004A1362 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F36033BB1E204D33004A1362 /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F3958B971E20ACF30077773A /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				F3958B9A1E20C7630077773A /* mainView.swift */,
+			);
+			name = "Custom View";
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 		F3A0C10F1D7648D700BC4C77 /* CustomCollectionViewCell */ = {
@@ -242,7 +265,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Norris Swift Sample Application";
 				TargetAttributes = {
 					F31AA7621D35B74300616067 = {
@@ -340,6 +363,7 @@
 				F31AA7691D35B74400616067 /* LoginViewController.swift in Sources */,
 				F38CDE071D37FDA20014E716 /* MessageDataModel.swift in Sources */,
 				F3A0C1111D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift in Sources */,
+				F3958B9B1E20C7630077773A /* mainView.swift in Sources */,
 				F3F4674A1D4EB4D400B271EF /* Utilities.swift in Sources */,
 				F39FE24D1D39AF8300E41B83 /* ContactsTableViewController.swift in Sources */,
 				F329017A1D3A5BA800268516 /* PageViewController.swift in Sources */,
@@ -350,6 +374,7 @@
 				F329017C1D3A615A00268516 /* SearchRecipeintViewController.swift in Sources */,
 				F329017E1D3AC98300268516 /* MyFireAuth.swift in Sources */,
 				F3F467471D4BBD5E00B271EF /* BubbleFactory.swift in Sources */,
+				F36033BC1E204D33004A1362 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,8 +414,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -434,8 +461,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -454,6 +483,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -219,14 +219,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     
 
-    func signOutMethod()
+    func signOutMethod(vc : UIViewController?)
     {
        
         do {
             
             try MyFireAuth.sharedInstance?.signOut()
             MyFireAuth.signedIn = false
-            loginAlert.text  = "Signed Out"
+//            loginAlert.text  = "Signed Out"
+            let signOutQuickAlert = vc?.createQuickAlert(text: "    Signed Out ")
+            
+            vc?.quickAnimateViewDisplay(view: signOutQuickAlert!, duration: 0.5)
+            
         }
         catch let signOutError as NSError {
             
@@ -236,7 +240,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     }
     @IBAction func callSignOutMethod(_ sender: AnyObject)
     {
-        signOutMethod()
+        signOutMethod(vc: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool

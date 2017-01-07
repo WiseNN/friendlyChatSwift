@@ -25,22 +25,27 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     var didSessionTimeOut = false
     var handler :UInt = 0
     var autoScroll = false
+    var logoutButton : UIButton!
+    
     static var rowHeight : CGFloat = 0
     
     
     
     override func viewDidLoad()
     {
-        
+        self.logoutButton.addTarget(self, action: #selector(ChatTableViewController.signOutButtonHandler), for: .touchUpInside)
         msgTableView.delegate = self
         msgTableView.dataSource = self
         msgTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
-        
-        
         postMesgTxtField.delegate = textFieldDelegate
             self.msgTableView.scrollsToTop = false
             self.loadMsgsFromMessageDataModel()
+        
+        self.msgTableView.backgroundView = UIImageView(image: loadBackgroundImage())
+        self.msgTableView.backgroundView?.contentMode = .scaleAspectFill
+        
+        
         
         
 //        self.msgTableView.backgroundView = UIImageView(image: UIImage(named: "greenBubble"))
@@ -49,7 +54,14 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(_ animated: Bool)
     {
         showNav()
-        
+    }
+    
+    func loadBackgroundImage() -> UIImage?
+    {
+        let imageData = self.openFileIn(directory: .applicationSupportDirectory, subDirectory: "photos", fileName: "backgroundImage")
+        guard imageData != nil else{return nil}
+        let image = UIImage.init(data: imageData!)
+        return image
     }
     
     func showNav()
@@ -80,13 +92,49 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        let msgTableNewHeight = self.msgTableView.frame.height - self.navigationController!.navigationBar.frame.height
+        self.msgTableView.frame = CGRect.init(x: self.msgTableView.bounds.minX, y: self.navigationController!.navigationBar.frame.height, width: self.msgTableView.frame.width, height: msgTableNewHeight)
+        
     }
+    
+    
+    
+    func signOutButtonHandler()
+    {
+        
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.signOutMethod(vc: self)
+        
+        //scroll view down, delay 0.7 for sign-out flash view
+        UIView.animate(withDuration: 0.3, delay: 0.7, options: [], animations: {
+            
+            self.view.transform = CGAffineTransform.identity
+        }, completion: {
+            
+            done in
+            guard done else{return}
+            
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+    }
+    
     
     
     func setSMSBkGround(_ SMSBkGroundImg : UIImage)
     {
         
         self.msgTableView.backgroundView = UIImageView(image: SMSBkGroundImg)
+        self.msgTableView.backgroundView?.contentMode = .scaleAspectFill
+        
+        DispatchQueue.global(qos: .default).async {
+            self.saveBackgroundImage(image: SMSBkGroundImg)
+        }
+    }
+    
+    func saveBackgroundImage(image : UIImage)
+    {
+        let imageData = UIImagePNGRepresentation(image)!
+        self.saveFileTo(directory: .applicationSupportDirectory, inNewSubDirectory: "photos", withData: imageData, underFileName: "backgroundImage")
     }
     
     
@@ -193,7 +241,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         let timedOutMsg = "Your Session has timed out, please login again. \n Thank you"
         var loginAlertMsg = ""
         let loginVC =  self.navigationController?.viewControllers[0] as! LoginViewController
-        loginVC.signOutMethod()
+        loginVC.signOutMethod(vc: self)
         
         if let msg = postMesgTxtField.text{
             recoveredMsg = msg
@@ -211,7 +259,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     {
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        LoginViewController.sharedInstance.signOutMethod()
+        LoginViewController.sharedInstance.signOutMethod(vc: self)
         self.navigationController?.popToRootViewController(animated: true)
         
     }
