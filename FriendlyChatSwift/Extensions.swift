@@ -121,10 +121,10 @@ extension UIViewController {
     {
         
         let attributes = [
-            NSForegroundColorAttributeName : UIColor.white,
-            NSFontAttributeName : UIFont.init(name: "Kohinoor Bangla", size: 20)
+			NSAttributedString.Key.foregroundColor : UIColor.white,
+			NSAttributedString.Key.font : UIFont.init(name: "Kohinoor Bangla", size: 20)
         ]
-        let attrString = NSAttributedString.init(string: text, attributes: attributes)
+		let attrString = NSAttributedString.init(string: text, attributes: attributes as [NSAttributedString.Key : Any])
         
         let fullwidth = self.view.frame.width
         let fullHeight = self.view.frame.height
@@ -136,7 +136,7 @@ extension UIViewController {
             
         let showFrameView = UIView(frame: CGRect.init(x: fullwidth/4, y: fullHeight/4, width: fullwidth/2+16, height: label.frame.height+16))
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+		let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         
         //always fill the view
@@ -170,7 +170,7 @@ extension UIViewController {
         let myActivityIndicator = UIActivityIndicatorView()
         myActivityIndicator.frame = onView.frame
         myActivityIndicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        myActivityIndicator.activityIndicatorViewStyle = .gray
+		myActivityIndicator.style = .gray
         myActivityIndicator.center = onView.center
         myActivityIndicator.isHidden = false
         myActivityIndicator.hidesWhenStopped = true

@@ -19,7 +19,7 @@ class MessageDataModel : NSObject
     
 //    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    let dbRef = FIRDatabase.database().reference()
+	let dbRef = Database.database().reference()
     
     
     fileprivate override init() {}
@@ -33,7 +33,7 @@ class MessageDataModel : NSObject
         
             let privateChatKey = "privateChat"
         
-            FIRDatabase.database().reference().child(privateChatKey).observeSingleEvent(of: .value, with: { (snapshot) in
+		Database.database().reference().child(privateChatKey).observeSingleEvent(of: .value, with: { (snapshot) in
 //                print("searchForRecipeintHelper: \(snapshot.value!)")
         
         
@@ -57,7 +57,7 @@ class MessageDataModel : NSObject
         let privateChat = "privateChat"
         let messages = "messages"
         let path = privateChat+"/"+MyFireAuth.currentUserID+"/"+MyFireAuth.recipeintID+"/"+messages
-        let dbMsgRef = FIRDatabase.database().reference().child(path)
+		let dbMsgRef = Database.database().reference().child(path)
         
         let handle =  dbMsgRef.queryOrderedByKey().observe(.childAdded, with: {
             (snapshot) in
@@ -97,12 +97,12 @@ class MessageDataModel : NSObject
     func getCurrentUserName(_ completion : @escaping (_ userId : String)->())
     {
         
-        FIRDatabase.database().reference().child("users").observeSingleEvent(of: .value, with: {
+		Database.database().reference().child("users").observeSingleEvent(of: .value, with: {
             (snapshot) in
             
             
             
-            let  getUserId = (snapshot.value! as AnyObject).value(forKey: (MyFireAuth.sharedInstance?.currentUser?.uid)!) as! String
+			let  getUserId = (snapshot.value! as AnyObject).value(forKey: (MyFireAuth.sharedInstance.currentUser?.uid)!) as! String
             
             print("getUserId: \(getUserId)")
             completion(getUserId)

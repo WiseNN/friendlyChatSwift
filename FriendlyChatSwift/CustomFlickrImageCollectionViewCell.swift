@@ -25,7 +25,7 @@ class CustomFlickrImageCollectionViewCell : UICollectionViewCell
             flickImgView.addGestureRecognizer(DoubleTapGesture)
     }
     
-    func transport()
+	@objc func transport()
     {
         
         

@@ -26,10 +26,10 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
     {
         self.flickrCollectionView.delegate = self
         self.flickrCollectionView.dataSource = self
-        findButton.addTarget(self, action: #selector(FlickrWebViewController.searchFlickrPhoto), for: UIControlEvents.touchUpInside)
+		findButton.addTarget(self, action: #selector(FlickrWebViewController.searchFlickrPhoto), for: .touchUpInside)
     }
     
-    func searchFlickrPhoto()
+	@objc func searchFlickrPhoto()
     {
         let customCell = CustomFlickrImageCollectionViewCell()
         guard flickrPhotoSearchField.text != "" else {
@@ -133,7 +133,7 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
         
         var url = BASE_URL+search_param+"&"+API_KEY+"&"+search_string+"&"+per_page+"&"+output_format+"&"+extras+"&"+jsonCallBack_param
         
-        url = url.addingPercentEscapes(using: String.Encoding.utf8)!
+		url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
 
         
         let SearchURL = URL.init(string: url)!
@@ -172,10 +172,9 @@ class FlickrWebViewController : UIViewController, UICollectionViewDelegate, UICo
             var img : UIImage?
             
             defer{
-                let imgView = UIImageView.init(image: img)
-                    imgView.contentMode = .scaleAspectFill
-                
                 DispatchQueue.main.sync {
+					let imgView = UIImageView.init(image: img)
+						imgView.contentMode = .scaleAspectFill
                     cell.flickImgView.image = img
                     cell.flickImgView.contentMode = .scaleAspectFill
 //                    cell.flickImgView.sizeToFit()

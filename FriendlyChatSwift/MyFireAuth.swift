@@ -9,11 +9,11 @@
 import Foundation
 import FirebaseAuth
 
-class MyFireAuth : FIRAuth
+class MyFireAuth : Auth
 {
     static let sharedInstance = MyFireAuth.auth()
     
-    static var user = FIRAuth.auth()?.currentUser
+	static var user = Auth.auth().currentUser
     static var recipeintID = ""
     static var currentUserID = ""
     static var signedIn = false

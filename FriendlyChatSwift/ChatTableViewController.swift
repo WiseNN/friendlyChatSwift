@@ -36,7 +36,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         self.logoutButton.addTarget(self, action: #selector(ChatTableViewController.signOutButtonHandler), for: .touchUpInside)
         msgTableView.delegate = self
         msgTableView.dataSource = self
-        msgTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+		msgTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         postMesgTxtField.delegate = textFieldDelegate
             self.msgTableView.scrollsToTop = false
@@ -76,7 +76,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         self.navigationItem.titleView = navTitleLabel
         
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Search", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ChatTableViewController.leftBarButtonHandler))
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Search", style: UIBarButtonItem.Style.plain, target: self, action: #selector(ChatTableViewController.leftBarButtonHandler))
         
         let img = UIImage.init(named: "flickr-3")
         
@@ -84,7 +84,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         imgV.image = img
         
         let rightButton = UIButton.init()
-        rightButton.addTarget(self, action: #selector(ChatTableViewController.seeFlickrWebViewer), for: UIControlEvents.touchUpInside)
+		rightButton.addTarget(self, action: #selector(ChatTableViewController.seeFlickrWebViewer), for: UIControl.Event.touchUpInside)
         rightButton.addSubview(imgV)
         rightButton.sizeToFit()
         
@@ -99,7 +99,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     
     
     
-    func signOutButtonHandler()
+	@objc func signOutButtonHandler()
     {
         
         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -133,12 +133,12 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     
     func saveBackgroundImage(image : UIImage)
     {
-        let imageData = UIImagePNGRepresentation(image)!
+		let imageData = image.pngData()!
         self.saveFileTo(directory: .applicationSupportDirectory, inNewSubDirectory: "photos", withData: imageData, underFileName: "backgroundImage")
     }
     
     
-    func seeFlickrWebViewer()
+	@objc func seeFlickrWebViewer()
     {
         print("Flickr image...")
         let flickrVC = storyboard?.instantiateViewController(withIdentifier: "FlickrWebViewController") as! FlickrWebViewController
@@ -148,7 +148,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
     
     }
     
-    func leftBarButtonHandler()
+	@objc func leftBarButtonHandler()
     {
         self.navigationController?.popViewController(animated: true)
     }
@@ -187,7 +187,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         let recipeintDBConvoRef = dbRef.child("privateChat/\(MyFireAuth.recipeintID)/\(MyFireAuth.currentUserID)")
         let key = dbConvoRef.childByAutoId().key
         
-        guard ((MyFireAuth.sharedInstance?.currentUser) != nil) || MyFireAuth.sharedInstance?.currentUser != MyFireAuth.user
+		guard ((MyFireAuth.sharedInstance.currentUser) != nil) || MyFireAuth.sharedInstance.currentUser != MyFireAuth.user
             else{
                 sessionTimedOut()
                 return
@@ -199,7 +199,8 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         postMesgTxtField.text = ""
         message = Utilities().removeLeadingTrailingWhiteSpace(NSString(string: message))
         
-        let index1 = Date().description.characters.index(Date().description.startIndex, offsetBy: 10)
+		
+        let index1 = Date().description.index(Date().description.startIndex, offsetBy: 10)
         let date = Date().description.substring(to: index1)
         let rangeBegin = Date().description.index(Date().description.startIndex, offsetBy: 12)
         let rangeEnd = Date().description.index(Date().description.startIndex, offsetBy: 18)
@@ -219,9 +220,9 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
             "time": time
         ]
         let childUpdatesForUserPosts = [
-            "/user-posts/\((MyFireAuth.currentUserID))/\(date)/\(key)/" : messagePost
+			"/user-posts/\((MyFireAuth.currentUserID))/\(date)/\(String(describing: key))/" : messagePost
         ]
-        let childUpdatesForPrivateChat = ["/messages/\(key)": post,
+		let childUpdatesForPrivateChat = ["/messages/\(String(describing: key))": post,
                             
         ]
         
@@ -295,7 +296,7 @@ class ChatTableViewController : UIViewController, UITableViewDelegate, UITableVi
         let container = bubble.generateBubble(msg, sender: sender)
         let height = (container?.frame.height)!
         tableView.rowHeight = height
-        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = UITableView.automaticDimension
         let cH = msgTableView.contentSize.height + 0
         let fH = msgTableView.frame.size.height
         print("Content height before: \(cH)...")

@@ -30,7 +30,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.appDel =  UIApplication.shared.delegate as! AppDelegate!
+		self.appDel =  UIApplication.shared.delegate as! AppDelegate
     
      
         self.searchTextField.delegate = self
@@ -65,7 +65,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
         self.resultsLabel.text = self.welcomeMessage()()
     }
     
-    func signOutButtonHandler()
+	@objc func signOutButtonHandler()
     {
         
         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -93,7 +93,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
         
     }
     
-    func panGestureHandler(gesture : UIPanGestureRecognizer)
+	@objc func panGestureHandler(gesture : UIPanGestureRecognizer)
     {
         let subViewHeight : CGFloat! = self.signOutButton.frame.height
         
@@ -113,7 +113,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
                 }, completion: {
                     done in
                     //send button to back
-                    self.view.sendSubview(toBack: self.signOutButton)
+					self.view.sendSubviewToBack(self.signOutButton)
             })
                 
         }
@@ -161,7 +161,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
         self.view.addGestureRecognizer(searchScreenTaps)
     }
     
-    func adjustForSignOut()
+	@objc func adjustForSignOut()
     {
        print("sign-out now!")
     }
@@ -303,7 +303,7 @@ class SearchRecipeintViewController : UIViewController, UITextFieldDelegate
             let currentUserSubPath = "\(currentUserName)"
             
             
-            let ref = FIRDatabase.database().reference().child("privateChat")
+			let ref = Database.database().reference().child("privateChat")
             
             
                     let usrRecipeintMsgPath : [String : Bool] = [

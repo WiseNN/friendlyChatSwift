@@ -75,7 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             return
         }
         
-        MyFireAuth.sharedInstance?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
+		MyFireAuth.sharedInstance.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
         {
             (userObj, error) in
 
@@ -83,8 +83,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             {
                 print("SIGN-IN METHOD")
                 MyFireAuth.signedIn = true
-                MyFireAuth.user = userObj!
-                print("useObj: \(MyFireAuth.user)")
+				MyFireAuth.user = userObj?.user
+				print("useObj: \(String(describing: MyFireAuth.user))")
             }
             else
             {
@@ -155,7 +155,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
 //        }
         
         //Check if username length is sufficient
-        guard usernameTextField.text?.characters.count > 1 else{
+        guard usernameTextField.text?.count > 1 else{
             print("Error: Sorry usernames must be longer than one character")
             loginAlert.text = "Sorry usernames must be longer than one character"
             return
@@ -169,15 +169,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         }
         
         //Check if password length is sufficient
-        guard passwordTextField.text?.characters.count > 6 else{
+        guard passwordTextField.text?.count > 6 else{
             print("Error: Sorry, passwords have to be longer than 6 characters")
             self.loginAlert.text = "Sorry, passwords have to be longer than 6 characters"
             return
         }
         
-        MyFireAuth.sharedInstance?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) {
+		MyFireAuth.sharedInstance.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) {
             
-            (user, error) in
+            (authUser, error) in
             self.passwordTextField.text = ""
             if let error = error
             {
@@ -185,14 +185,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                 self.loginAlert.text = error.localizedDescription
                 return
             }
-            if (user?.email != self.emailTextField.text!)
+			if (authUser?.user.email != self.emailTextField.text!)
             {
                 print("IMPORTANT ERROR: user cannot sign-up, report to system administrator")
                 self.loginAlert.text = "please try to sign-up again, there may be an error with the system \n Thank You!"
                 return
             }
-            
-            self.createUserPathSignUpHelper(user!, displayName: self.usernameTextField.text!)
+			self.createUserPathSignUpHelper(authUser!.user, displayName: self.usernameTextField.text!)
+			
             self.emailTextField.text = ""
             self.usernameTextField.text = ""
             
@@ -224,7 +224,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
        
         do {
             
-            try MyFireAuth.sharedInstance?.signOut()
+			try MyFireAuth.sharedInstance.signOut()
             MyFireAuth.signedIn = false
 //            loginAlert.text  = "Signed Out"
             let signOutQuickAlert = vc?.createQuickAlert(text: "    Signed Out ")
@@ -250,7 +250,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     }
     
     //Helper methods, remember to change param back to: FIRUser
-    func  createUserPathSignUpHelper(_ userSigningUp : FIRUser, displayName : String )
+	func  createUserPathSignUpHelper(_ userSigningUp : User, displayName : String )
     {
         
     let newUserPathForPrivateChat : [String : AnyObject ]
@@ -258,7 +258,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         = ["privateChat/_\(displayName)/" : 1 as AnyObject
             ,"users/\(userSigningUp.uid)/" : displayName as AnyObject]
 
-        FIRDatabase.database().reference().updateChildValues(newUserPathForPrivateChat, withCompletionBlock: { (err, ref) in
+		Database.database().reference().updateChildValues(newUserPathForPrivateChat, withCompletionBlock: { (err, ref) in
             
             guard err == nil else{
                 print("ERROR UPDATING NEW USER PATH: \(err?.localizedDescription)")

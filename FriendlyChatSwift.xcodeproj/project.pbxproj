@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A362CF4084B1D9D8D6B58329 /* Pods_FriendlyChatSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6628E7B4972BDCBF39CDFDCB /* Pods_FriendlyChatSwift.framework */; };
+		8DE4D96D28E4316C007BCF84 /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4D96C28E4316C007BCF84 /* mainView.swift */; };
 		F31AA7671D35B74400616067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AA7661D35B74300616067 /* AppDelegate.swift */; };
 		F31AA7691D35B74400616067 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31AA7681D35B74400616067 /* LoginViewController.swift */; };
 		F31AA76C1D35B74400616067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31AA76A1D35B74400616067 /* Main.storyboard */; };
@@ -21,18 +21,19 @@
 		F36033BC1E204D33004A1362 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36033BB1E204D33004A1362 /* Extensions.swift */; };
 		F36164581D3DA1B100322122 /* ChatTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36164571D3DA1B100322122 /* ChatTextFieldDelegate.swift */; };
 		F38CDE071D37FDA20014E716 /* MessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38CDE061D37FDA20014E716 /* MessageDataModel.swift */; };
-		F3958B9B1E20C7630077773A /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3958B9A1E20C7630077773A /* mainView.swift */; };
 		F39FE24D1D39AF8300E41B83 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FE24C1D39AF8300E41B83 /* ContactsTableViewController.swift */; };
 		F3A0C10E1D75013400BC4C77 /* FlickrWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C10D1D75013400BC4C77 /* FlickrWebViewController.swift */; };
 		F3A0C1111D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0C1101D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift */; };
 		F3F467471D4BBD5E00B271EF /* BubbleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F467461D4BBD5E00B271EF /* BubbleFactory.swift */; };
 		F3F4674A1D4EB4D400B271EF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F467491D4EB4D400B271EF /* Utilities.swift */; };
+		FBEFF551425A9AADE76F2B4C /* Pods_FriendlyChatSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF1FEE6F3ED88272199559D /* Pods_FriendlyChatSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6628E7B4972BDCBF39CDFDCB /* Pods_FriendlyChatSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FriendlyChatSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DA66A21375429A8C158B781 /* Pods-FriendlyChatSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.release.xcconfig"; sourceTree = "<group>"; };
-		BE0C25534C0A198B8A9D2D01 /* Pods-FriendlyChatSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		3FF1FEE6F3ED88272199559D /* Pods_FriendlyChatSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FriendlyChatSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DE4D96C28E4316C007BCF84 /* mainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mainView.swift; path = FriendlyChatSwift/mainView.swift; sourceTree = SOURCE_ROOT; };
+		A5AA813EC4BBC37530605C1C /* Pods-FriendlyChatSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.debug.xcconfig"; path = "Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		C6F7A4F7B18A666F350679F7 /* Pods-FriendlyChatSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.release.xcconfig"; path = "Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.release.xcconfig"; sourceTree = "<group>"; };
 		F31AA7631D35B74300616067 /* FriendlyChatSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendlyChatSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31AA7661D35B74300616067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F31AA7681D35B74400616067 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		F36033BB1E204D33004A1362 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F36164571D3DA1B100322122 /* ChatTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextFieldDelegate.swift; sourceTree = "<group>"; };
 		F38CDE061D37FDA20014E716 /* MessageDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDataModel.swift; sourceTree = "<group>"; };
-		F3958B9A1E20C7630077773A /* mainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 		F39FE24C1D39AF8300E41B83 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		F3A0C10D1D75013400BC4C77 /* FlickrWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrWebViewController.swift; sourceTree = "<group>"; };
 		F3A0C1101D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlickrImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -61,20 +61,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A362CF4084B1D9D8D6B58329 /* Pods_FriendlyChatSwift.framework in Frameworks */,
+				FBEFF551425A9AADE76F2B4C /* Pods_FriendlyChatSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		63093E65619CCEBC293B749B /* Pods */ = {
+		14E05E6AD952FBC38AFCD86E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BE0C25534C0A198B8A9D2D01 /* Pods-FriendlyChatSwift.debug.xcconfig */,
-				6DA66A21375429A8C158B781 /* Pods-FriendlyChatSwift.release.xcconfig */,
+				A5AA813EC4BBC37530605C1C /* Pods-FriendlyChatSwift.debug.xcconfig */,
+				C6F7A4F7B18A666F350679F7 /* Pods-FriendlyChatSwift.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8880E1F0089EAA464E1B46E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FF1FEE6F3ED88272199559D /* Pods_FriendlyChatSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F31AA75A1D35B74300616067 = {
@@ -82,8 +90,8 @@
 			children = (
 				F31AA7651D35B74300616067 /* FriendlyChatSwift */,
 				F31AA7641D35B74300616067 /* Products */,
-				63093E65619CCEBC293B749B /* Pods */,
-				FDA15F3D45922F31E3232C08 /* Frameworks */,
+				14E05E6AD952FBC38AFCD86E /* Pods */,
+				8880E1F0089EAA464E1B46E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,7 +197,7 @@
 		F3958B971E20ACF30077773A /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
-				F3958B9A1E20C7630077773A /* mainView.swift */,
+				8DE4D96C28E4316C007BCF84 /* mainView.swift */,
 			);
 			name = "Custom View";
 			path = ../Pods;
@@ -227,14 +235,6 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		FDA15F3D45922F31E3232C08 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6628E7B4972BDCBF39CDFDCB /* Pods_FriendlyChatSwift.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,12 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F31AA7751D35B74400616067 /* Build configuration list for PBXNativeTarget "FriendlyChatSwift" */;
 			buildPhases = (
-				36A6A880206616C8A4F03EA9 /* [CP] Check Pods Manifest.lock */,
+				B8A18B329F8166BB103F5452 /* [CP] Check Pods Manifest.lock */,
 				F31AA75F1D35B74300616067 /* Sources */,
 				F31AA7601D35B74300616067 /* Frameworks */,
 				F31AA7611D35B74300616067 /* Resources */,
-				79A6EC37F10054C006C079AA /* [CP] Embed Pods Frameworks */,
-				F207182BF87A33A9CAC0625B /* [CP] Copy Pods Resources */,
+				C05A10E7B22D5420CEDEFFEC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,19 +264,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Norris Swift Sample Application";
 				TargetAttributes = {
 					F31AA7621D35B74300616067 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6AK84RJP73;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
 			buildConfigurationList = F31AA75E1D35B74300616067 /* Build configuration list for PBXProject "FriendlyChatSwift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -308,49 +307,66 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		36A6A880206616C8A4F03EA9 /* [CP] Check Pods Manifest.lock */ = {
+		B8A18B329F8166BB103F5452 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FriendlyChatSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		79A6EC37F10054C006C079AA /* [CP] Embed Pods Frameworks */ = {
+		C05A10E7B22D5420CEDEFFEC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F207182BF87A33A9CAC0625B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -363,7 +379,7 @@
 				F31AA7691D35B74400616067 /* LoginViewController.swift in Sources */,
 				F38CDE071D37FDA20014E716 /* MessageDataModel.swift in Sources */,
 				F3A0C1111D76491800BC4C77 /* CustomFlickrImageCollectionViewCell.swift in Sources */,
-				F3958B9B1E20C7630077773A /* mainView.swift in Sources */,
+				8DE4D96D28E4316C007BCF84 /* mainView.swift in Sources */,
 				F3F4674A1D4EB4D400B271EF /* Utilities.swift in Sources */,
 				F39FE24D1D39AF8300E41B83 /* ContactsTableViewController.swift in Sources */,
 				F329017A1D3A5BA800268516 /* PageViewController.swift in Sources */,
@@ -404,19 +420,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -439,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -451,19 +477,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -480,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -490,7 +526,7 @@
 		};
 		F31AA7761D35B74400616067 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE0C25534C0A198B8A9D2D01 /* Pods-FriendlyChatSwift.debug.xcconfig */;
+			baseConfigurationReference = A5AA813EC4BBC37530605C1C /* Pods-FriendlyChatSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -499,13 +535,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FriendlyChatSwift2.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		F31AA7771D35B74400616067 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DA66A21375429A8C158B781 /* Pods-FriendlyChatSwift.release.xcconfig */;
+			baseConfigurationReference = C6F7A4F7B18A666F350679F7 /* Pods-FriendlyChatSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -514,7 +550,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FriendlyChatSwift2.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
